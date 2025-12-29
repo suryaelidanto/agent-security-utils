@@ -1,16 +1,31 @@
 [project]
-name = "ai-automation-agent-hybrid-core"
+name = "agent-security-utils"
 version = "0.1.0"
-description = "Utility API for AI Agents providing Prompt Injection defense, Fuzzy Matching, and Sentiment Analysis."
+description = "Security firewall and utility endpoints for LLM agents"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "dotenv>=0.9.9",
-    "fastapi>=0.126.0",
+    "fastapi>=0.109.0",
+    "uvicorn>=0.27.0",
+    "instructor>=1.0.0",
+    "openai>=1.15.0",
     "fuzzywuzzy>=0.18.0",
-    "instructor>=1.13.0",
-    "openai>=2.14.0",
-    "pydantic>=2.12.5",
-    "python-levenshtein>=0.27.3",
-    "uvicorn>=0.38.0",
+    "python-levenshtein>=0.23.0",
+    "python-dotenv>=1.0.0",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.2.0",
+    "httpx>=0.26.0",
+    "pre-commit>=3.6.0",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
