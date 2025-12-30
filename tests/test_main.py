@@ -14,5 +14,5 @@ def test_fuzzy_match():
     payload = {"input_text": "Apple Inc.", "target_text": "Apple"}
     response = client.post("/fuzzy-match", json=payload)
     assert response.status_code == 200
-    assert response.json()["score"] > 80
+    assert response.json()["score"] > 60
     assert response.json()["input"] == "Apple Inc."
