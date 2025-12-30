@@ -4,6 +4,10 @@ from openai import OpenAI
 from fuzzywuzzy import fuzz
 from app.models import DefenseResponse, SentimentResponse
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 client = instructor.from_openai(OpenAI(api_key=os.getenv("OPENAI_API_KEY")))
 
 

@@ -1,11 +1,12 @@
 from fastapi import FastAPI
+
+from app import services
 from app.models import (
     AgentRequest,
     DefenseResponse,
-    SentimentResponse,
     FuzzyMatchResponse,
+    SentimentResponse,
 )
-from app import services
 
 app = FastAPI(
     title="Agent Security Utils API",
